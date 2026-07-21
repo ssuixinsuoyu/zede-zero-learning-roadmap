@@ -1,0 +1,4 @@
+interface:
+  display_name: "Zede Plan Learning Roadmap（学习路线规划）"
+  short_description: "先诊断并确认学习目标，再生成可执行、可核验且能持续重排的完整路线"
+  default_prompt: "使用 $zede-plan-learning-roadmap 先向我说明全部规则，再逐题确认目标和基础，确认后生成并核验学习路线。"

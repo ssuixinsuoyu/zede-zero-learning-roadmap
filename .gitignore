@@ -1,0 +1,7 @@
+# Local learning records may contain personal information.
+learning-roadmaps/
+
+# Local packages and operating-system files.
+*.zip
+.DS_Store
+Thumbs.db
