@@ -155,7 +155,6 @@ matrix, invocation differences, and limitations.
 ## Installation
 
 Clone the published repository:
-clone it with:
 
 ```bash
 git clone https://github.com/ssuixinsuoyu/zede-zero-learning-roadmap.git
@@ -186,7 +185,8 @@ repository as the agent's workspace and make a matching request.
 
 Codex invocation:
 
-```text$zede-zero-learning-roadmap I want to build a Python automation tool within three months and can invest eight hours per week.
+```text
+$zede-zero-learning-roadmap I want to build a Python automation tool within three months and can invest eight hours per week.
 ```
 
 Claude Code uses `/zede-zero-learning-roadmap`. Other native hosts can activate
