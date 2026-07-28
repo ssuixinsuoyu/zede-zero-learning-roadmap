@@ -1,6 +1,6 @@
 ---
 name: zede-zero-learning-roadmap
-description: 根据学习目标、当前基础、期限、约束和时间预算，先逐题澄清并用轻量第一性原理识别目标本质、关键变量、不可绕过的能力与最小验证闭环，再分类和诊断；经用户确认目标卡与输出模式后检索适用依据，生成包含能力迁移、适用反馈和延迟复测的分层版或全量版学习路线，并能保存或按证据持续重排。用于学习路线、学习计划、技能提升、转行、考试、项目、语言、理论、商业能力、探索方向、进度恢复或结构性重排；也用于用户明确要求把路线规划反馈永久升级到此 Skill 时。只负责规划与重排；不要用于逐课讲解、一次一题教学或连续课程。
+description: Plan and replan evidence-based, goal-driven learning roadmaps from the learner's objective, baseline, deadline, constraints, and time budget. Use for study plans, skill development, career transitions, exams, technical projects, language learning, academic theory, business capabilities, direction exploration, roadmap restoration, and structural replanning. Clarify one question at a time, apply lightweight first principles, diagnose the starting point with evidence, require target-card confirmation, research relevant official sources, and produce layered or full roadmaps with concrete content, projects, feedback, transfer, retests, and verification. Do not use for lesson-by-lesson tutoring. 根据学习目标、当前基础、期限、约束和时间预算，逐题澄清并用轻量第一性原理拆解目标，诊断真实起点；确认目标卡和输出模式后检索适用的官方依据，生成具体、可执行、可验收、可复测和可持续重排的分层版或全量版学习路线。用于学习计划、技能提升、转行、考试、技术项目、语言、理论、商业能力、方向探索、路线恢复和结构性重排；不要用于逐课教学或连续课程。
 ---
 
 # Zede-Zero（零）
