@@ -186,8 +186,7 @@ repository as the agent's workspace and make a matching request.
 
 Codex invocation:
 
-```text
-$zede-zero-learning-roadmap 我想在三个月内学会 Python，每周可以投入 8 小时。
+```text$zede-zero-learning-roadmap I want to build a Python automation tool within three months and can invest eight hours per week.
 ```
 
 Claude Code uses `/zede-zero-learning-roadmap`. Other native hosts can activate
