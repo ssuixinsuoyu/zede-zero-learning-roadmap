@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "pass": {
+      "type": "boolean"
+    },
+    "hard_gate_failures": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "quality_issues": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "pass",
+    "hard_gate_failures",
+    "quality_issues",
+    "summary"
+  ]
+}

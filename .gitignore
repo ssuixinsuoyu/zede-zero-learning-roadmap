@@ -1,5 +1,6 @@
 # Local learning records may contain personal information.
 learning-roadmaps/
+evals/runs/
 
 # Local packages and operating-system files.
 *.zip

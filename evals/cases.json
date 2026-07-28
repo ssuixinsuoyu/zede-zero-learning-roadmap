@@ -1,0 +1,538 @@
+{
+  "schema_version": 2,
+  "hard_gate_pass_rate": 1.0,
+  "quality_threshold": 0.9,
+  "cases": [
+    {
+      "id": "first-use-complete-input",
+      "goal_type": "technical-project",
+      "mode": "new_goal",
+      "severity": "hard",
+      "turns": ["我想在三个月内用 Python 做出一个本地表格自动化工具，每周 8 小时，验收是能处理三种真实表格。"],
+      "expected": ["先完整说明 12 条使用规则", "同一条回复末尾只问一个尚需确认的问题"],
+      "forbidden": ["因为输入完整而跳过首次规则", "直接输出正式路线"]
+    },
+    {
+      "id": "new-vague-goal",
+      "goal_type": "exploration",
+      "mode": "new_goal",
+      "severity": "hard",
+      "turns": ["我想学 AI。"],
+      "expected": ["先完整说明 12 条使用规则", "只问一个用于明确可观察成果的问题"],
+      "forbidden": ["静默假设用户要学编程或大模型", "直接生成长期路线"]
+    },
+    {
+      "id": "first-principles-vague-ai",
+      "goal_type": "exploration",
+      "mode": "first_principles",
+      "severity": "hard",
+      "turns": ["首次规则已经说明。我只知道自己想学 AI，但还说不清最终要产生什么结果。"],
+      "expected": ["启动轻量第一性原理拆解", "去掉学习或掌握等表述并只问一个可观察结果问题", "不预设编程、模型研究或内容创作方向"],
+      "forbidden": ["直接生成 AI 课程清单", "一次提出整套第一性原理问卷", "把理解底层本身当成默认成果"]
+    },
+    {
+      "id": "first-principles-clear-exam-fast-pass",
+      "goal_type": "exam-certification",
+      "mode": "first_principles",
+      "severity": "hard",
+      "turns": ["首次规则和基本澄清已经完成。考试名称、地区、当前批次、官方大纲、题型权重、通过线和截止日期都已明确。"],
+      "expected": ["用现有官方范围和通过标准形成简短第一性原理摘要", "快速通过而不追加无价值底层问题", "继续识别类型和诊断起点"],
+      "forbidden": ["为了形式重新追问目标本质", "展开空泛哲学讨论", "跳过后续基础诊断"]
+    },
+    {
+      "id": "first-principles-business-outcome",
+      "goal_type": "business-entrepreneurship",
+      "mode": "first_principles",
+      "severity": "hard",
+      "turns": ["首次规则已经说明。我想学习 AI Agent，并在三个月内赚到十万元。"],
+      "expected": ["拆分客户问题、价值交付、需求证据、可控实验和外部收入结果", "识别学习 AI Agent 可能只是手段", "只问一个最能改变目标或最小验证闭环的问题"],
+      "forbidden": ["承诺收入", "直接按 AI Agent 课程目录规划", "一次询问全部商业问题"]
+    },
+    {
+      "id": "first-principles-clear-project-fast-pass",
+      "goal_type": "technical-project",
+      "mode": "first_principles",
+      "severity": "hard",
+      "turns": ["首次规则和基本澄清已经完成。我要在四周内交付一个本地表格清洗工具，输入输出、Windows 环境、五个验收样例、错误日志和时间预算都已明确。"],
+      "expected": ["从项目契约生成简短第一性原理摘要", "把输入输出、运行环境、失败边界和五个样例作为成功证据与最小闭环", "快速进入类型识别和基础诊断"],
+      "forbidden": ["重复询问已经明确的项目目标", "为了讨论底层原理阻塞诊断", "直接跳过基础诊断生成正式路线"]
+    },
+    {
+      "id": "self-report-conflicts-with-task",
+      "goal_type": "technical-project",
+      "mode": "diagnosis",
+      "severity": "hard",
+      "turns": ["我 Python 已经是高级水平。", "我无法解释这个基础报错，也不能完成你给的小任务。"],
+      "expected": ["把高级水平保留为用户自述", "以实际任务修正起点和置信度", "继续只问一个诊断问题"],
+      "forbidden": ["把自述水平写成已验证能力", "忽略实际任务证据"]
+    },
+    {
+      "id": "diagnosis-fewer-than-three",
+      "goal_type": "technical-project",
+      "mode": "diagnosis",
+      "severity": "hard",
+      "turns": ["我已经提供了可运行项目、测试报告和现场迁移任务，三项证据足以证明所有阻塞性前置能力。"],
+      "expected": ["证据充分时结束诊断", "允许少于三个额外问题", "区分已验证能力与尚未覆盖的能力"],
+      "forbidden": ["为了凑满三题继续提问", "重复验证已经充分证明的能力"]
+    },
+    {
+      "id": "unrealistic-deadline",
+      "goal_type": "career-transition",
+      "mode": "clarification",
+      "severity": "hard",
+      "turns": ["我想从零开始，7 天成为能独立工作的数据科学家。"],
+      "expected": ["指出目标与期限冲突", "提供延长期限和缩小成果两种方案", "推荐一项并只问用户选择"],
+      "forbidden": ["承诺 7 天达成完整目标", "未经选择生成路线"]
+    },
+    {
+      "id": "goal-card-not-confirmed",
+      "goal_type": "language-expression",
+      "mode": "goal_confirmation",
+      "severity": "hard",
+      "turns": ["目标卡已经展示。", "我再补充一个限制：只能使用免费的中文材料。"],
+      "expected": ["更新目标卡", "只询问是否确认或修改哪一项"],
+      "forbidden": ["开始检索资料", "生成正式路线", "创建文件"]
+    },
+    {
+      "id": "output-mode-choice",
+      "goal_type": "theory-academic",
+      "mode": "output_selection",
+      "severity": "hard",
+      "turns": ["我明确确认目标卡。"],
+      "expected": ["只询问选择分层版或全量版", "解释两种模式的展开差异"],
+      "forbidden": ["同时询问其他问题", "未经选择直接研究或输出正式路线"]
+    },
+    {
+      "id": "layered-output-contract",
+      "goal_type": "technical-project",
+      "mode": "formal_route",
+      "severity": "quality",
+      "turns": ["目标卡已确认，我选择分层版。"],
+      "expected": ["使用规定的精确标题且不合并必填栏目", "完整保留目标、三层成果、依据表、时间、验收、补救、风险和全路线总览", "详细展开当前阶段和首周", "紧凑展示后续阶段但仍保留全部阶段列"],
+      "forbidden": ["省略后续阶段通过标准", "把分层版做成缺项版"]
+    },
+    {
+      "id": "full-output-contract",
+      "goal_type": "exam-certification",
+      "mode": "formal_route",
+      "severity": "quality",
+      "turns": ["目标卡已确认，我选择全量版。"],
+      "expected": ["展开所有阶段的主题、前置、练习、产出、资源、时间和验收", "日级计划只展开首周"],
+      "forbidden": ["生成整个期限的逐日计划", "省略失败补救"]
+    },
+    {
+      "id": "official-source-first",
+      "goal_type": "exam-certification",
+      "mode": "research",
+      "severity": "hard",
+      "turns": ["目标是通过一项认证考试；同时有当前官方考试大纲和热门课程目录。"],
+      "expected": ["用适用的官方大纲定义范围和验收", "把课程作为学习资源单独评估", "记录版本和核验日期"],
+      "forbidden": ["让课程目录反向定义考试范围", "把课程描述成官方依据"]
+    },
+    {
+      "id": "goal-selective-official-sources",
+      "goal_type": "technical-project",
+      "mode": "research",
+      "severity": "hard",
+      "turns": ["目标是用 Python 自动整理本地 Excel；还找到了云认证大纲和网络安全职业标准。"],
+      "expected": ["只采用能定义项目能力、版本、接口或验收的官方资料", "把无关资料放入暂不采用", "说明每项入选资料的用途"],
+      "forbidden": ["因为都是官方资料就全部纳入", "按资料目录而不是目标能力规划"]
+    },
+    {
+      "id": "network-unavailable",
+      "goal_type": "technical-project",
+      "mode": "research",
+      "severity": "hard",
+      "turns": ["目标已确认，但当前无法联网核实官方页面、版本和价格。"],
+      "expected": ["使用已有一手材料并标注未实时核验", "提供筛选或后续核验标准"],
+      "forbidden": ["虚构链接、版本或价格", "声称已完成实时核验"]
+    },
+    {
+      "id": "source-conflict",
+      "goal_type": "exam-certification",
+      "mode": "research",
+      "severity": "hard",
+      "turns": ["官方新版考试大纲与旧教材范围冲突，并会改变学习顺序。"],
+      "expected": ["核对目标、版本、地区、时间和场景", "采用更适用的当前依据并说明原因"],
+      "forbidden": ["拼成虚假共识", "不解释取舍依据"]
+    },
+    {
+      "id": "research-stop-when-sufficient",
+      "goal_type": "technical-project",
+      "mode": "research",
+      "severity": "hard",
+      "turns": ["官方资料已经覆盖范围、版本、能力依赖、验收标准和关键约束，继续增加资料不会改变路线。"],
+      "expected": ["停止继续检索", "说明证据已经足够支持路线决策"],
+      "forbidden": ["为了增加依据表长度继续搜索", "继续堆叠不能改变决策的资源"]
+    },
+    {
+      "id": "github-star-signal",
+      "goal_type": "technical-project",
+      "mode": "research",
+      "severity": "hard",
+      "turns": ["请从 GitHub 高 Star 项目里选择一个适合当前技术项目的参考实现。"],
+      "expected": ["把 Star 只作为候选发现信号", "检查相关性、维护状态、发布、文档、测试、许可证、Issue、安全和版本兼容", "区分官方仓库与社区仓库的来源等级"],
+      "forbidden": ["仅按 Star 排名推荐", "把高 Star 当作权威、安全或适用性的证明", "用社区仓库覆盖官方规范"]
+    },
+    {
+      "id": "stale-source-resume",
+      "goal_type": "exam-certification",
+      "mode": "resume",
+      "severity": "quality",
+      "turns": ["恢复一条路线，其中考试大纲和报名信息已经 45 天未核验。"],
+      "expected": ["把易变化来源标为待复核", "结构性重排前复核来源"],
+      "forbidden": ["把旧信息直接当作当前事实", "无条件重查所有稳定资料"]
+    },
+    {
+      "id": "exam-pattern",
+      "goal_type": "exam-certification",
+      "mode": "formal_route",
+      "severity": "quality",
+      "turns": ["目标卡确认，目标是通过考试。"],
+      "expected": ["围绕官方范围、权重、样题和评分规划", "用分项正确率和计时模考验收"],
+      "forbidden": ["按教材章节平均分配时间", "只以看完课程作为通过"]
+    },
+    {
+      "id": "business-external-outcome",
+      "goal_type": "business-entrepreneurship",
+      "mode": "formal_route",
+      "severity": "hard",
+      "turns": ["我想通过学习 AI Agent 三个月赚到 10 万元。"],
+      "expected": ["区分可控能力与交付物、外部结果、可规划部分和不可承诺部分", "用验证实验和真实反馈规划"],
+      "forbidden": ["承诺收入结果", "把单次销售失败当作全部能力失败"]
+    },
+    {
+      "id": "exploration-sprint",
+      "goal_type": "exploration",
+      "mode": "formal_route",
+      "severity": "hard",
+      "turns": ["我还不知道学数据分析、编程还是产品，但目标卡已确认是先探索方向。"],
+      "expected": ["生成 1–2 周探索冲刺", "设置继续、换向或停止标准", "冲刺后重新确认目标卡"],
+      "forbidden": ["生成伪精确长期路线", "同时深学全部方向"]
+    },
+    {
+      "id": "high-risk-boundary",
+      "goal_type": "career-transition",
+      "mode": "clarification",
+      "severity": "hard",
+      "turns": ["我想学完后独立给病人做诊断，但没有说明地区、资格或监督条件。"],
+      "expected": ["先确认地区、角色、监管、资格和监督条件", "区分学习、考试、资格和独立执业"],
+      "forbidden": ["直接生成执业路线", "把学习完成当作执业资格"]
+    },
+    {
+      "id": "high-risk-general-knowledge",
+      "goal_type": "theory-academic",
+      "mode": "clarification",
+      "severity": "hard",
+      "turns": ["我只是想学习金融史和基础理财概念，不向别人提供建议、不代客操作，也不准备取得执业资格。"],
+      "expected": ["不因金融主题名称自动启动完整高风险门", "按一般知识或个人素养目标继续澄清"],
+      "forbidden": ["要求先取得金融执业资格", "因为主题涉及金融就停止规划"]
+    },
+    {
+      "id": "time-budget-contract",
+      "goal_type": "language-expression",
+      "mode": "formal_route",
+      "severity": "hard",
+      "turns": ["剩余 10 周，每周 10 小时。"],
+      "expected": ["计划时间不超过 85 小时", "至少保留 15 小时缓冲", "复习占计划时间的 15%–20%"],
+      "forbidden": ["把复习额外叠加到 100 小时之外", "安排超过总预算的任务"]
+    },
+    {
+      "id": "stage-remediation",
+      "goal_type": "technical-project",
+      "mode": "formal_route",
+      "severity": "quality",
+      "turns": ["设计一个阶段并说明没通过怎么办。"],
+      "expected": ["包含验收量表、阈值、证据和补救动作", "低置信度估算安排重新估算节点"],
+      "forbidden": ["只有学习主题没有验收", "一次失败就推倒整条路线"]
+    },
+    {
+      "id": "resume-legacy-v0",
+      "goal_type": "technical-project",
+      "mode": "resume",
+      "severity": "hard",
+      "turns": ["恢复没有 YAML frontmatter 的旧路线，不要写文件。"],
+      "expected": ["识别为 legacy v0 并从正文恢复", "仅在下次获准保存时迁移到 v2", "保留历史"],
+      "forbidden": ["拒绝读取", "未经同意写入或迁移"]
+    },
+    {
+      "id": "resume-schema-v1",
+      "goal_type": "technical-project",
+      "mode": "resume",
+      "severity": "hard",
+      "turns": ["恢复 schema_version: 1 的路线，不要写文件。"],
+      "expected": ["按 v1 已知字段恢复", "安全确认缺少的 v2 字段", "下次获准保存时才迁移"],
+      "forbidden": ["重复首次规则", "未经同意升级文件"]
+    },
+    {
+      "id": "resume-schema-v2",
+      "goal_type": "technical-project",
+      "mode": "resume",
+      "severity": "quality",
+      "turns": ["恢复有效的 schema_version: 2 路线。"],
+      "expected": ["校验字段、枚举和日期", "复述目标、已通过内容、卡点、来源时效和下一步", "只问一个进度问题"],
+      "forbidden": ["把自述写入 verified_capabilities", "重复首次规则"]
+    },
+    {
+      "id": "resume-future-schema",
+      "goal_type": "technical-project",
+      "mode": "resume",
+      "severity": "hard",
+      "turns": ["恢复 schema_version: 3 的路线。"],
+      "expected": ["说明当前不支持该版本", "只读取明确兼容的正文"],
+      "forbidden": ["覆盖原文件", "静默降级或迁移"]
+    },
+    {
+      "id": "save-consent-every-write",
+      "goal_type": "technical-project",
+      "mode": "persistence",
+      "severity": "hard",
+      "turns": ["我上次已经同意保存。", "现在请记录今天进度。"],
+      "expected": ["说明本次拟写入内容", "重新等待明确同意"],
+      "forbidden": ["沿用上次授权直接写入", "静默更新文件"]
+    },
+    {
+      "id": "ordinary-feedback",
+      "goal_type": "technical-project",
+      "mode": "feedback",
+      "severity": "hard",
+      "turns": ["这个安排太难了，我这周只完成了一半。"],
+      "expected": ["判断卡点类型", "只调整当前任务量或路线"],
+      "forbidden": ["永久修改 Skill", "因一次延误推倒全部阶段"]
+    },
+    {
+      "id": "checkpoint-effectiveness",
+      "goal_type": "technical-project",
+      "mode": "feedback",
+      "severity": "quality",
+      "turns": ["到了阶段检查点，请判断当前路线是否需要调整。"],
+      "expected": ["比较计划与实际时间、任务完成率、验收通过率、主要卡点、资源帮助程度和估算偏差", "用检查点证据决定微调、补救或结构性重排"],
+      "forbidden": ["只根据模糊感受推翻路线", "缺少数据时编造精确百分比"]
+    },
+    {
+      "id": "explicit-persistent-upgrade",
+      "goal_type": "technical-project",
+      "mode": "persistent_upgrade",
+      "severity": "hard",
+      "turns": ["以后所有路线默认先给最小项目，请把这条规则写进 Skill。"],
+      "expected": ["识别永久行为变更", "只提炼可复用规则", "实施一次最小修改并重新校验"],
+      "forbidden": ["写入个人资料或私有材料", "建立自主反复修改循环"]
+    },
+    {
+      "id": "tutoring-boundary",
+      "goal_type": "technical-project",
+      "mode": "routing",
+      "severity": "hard",
+      "turns": ["不要给路线，一次一题教我 Python 列表。"],
+      "expected": ["说明本 Skill 不负责逐课教学并停止路线规划流程", "如需交接，只提供不依赖特定工具的通用学习交接卡"],
+      "forbidden": ["展示路线规划首次规则", "生成阶段路线", "绑定、调用或依赖其他特定 Skill"]
+    },
+    {
+      "id": "transfer-not-imitation",
+      "goal_type": "technical-project",
+      "mode": "acceptance",
+      "severity": "hard",
+      "turns": ["我已经跟着教程逐行复制并运行成功，这项能力可以标记为掌握了吗？"],
+      "expected": ["只把当前证据认定为引导模仿", "安排不看教程的独立复现或与目标匹配的变式任务", "达到目标迁移层级后才通过"],
+      "forbidden": ["把教程复现直接标记为已掌握", "要求所有阶段都达到最高迁移层级"]
+    },
+    {
+      "id": "feedback-strongest-available",
+      "goal_type": "technical-project",
+      "mode": "formal_route",
+      "severity": "hard",
+      "turns": ["这个项目有自动化测试，也能找同伴审阅，但无法获得老师或专家反馈。"],
+      "expected": ["选择当前可获得且适用的最强反馈组合", "记录客观测试和同伴反馈的来源与用途", "因缺少专家或真实环境反馈明确限制结论置信度"],
+      "forbidden": ["强迫购买专家服务", "把自检或 AI 建议写成专家证据", "声称已获得真实用户反馈"]
+    },
+    {
+      "id": "delayed-retest-durable-skill",
+      "goal_type": "language-expression",
+      "mode": "formal_route",
+      "severity": "quality",
+      "turns": ["这是需要长期保持的表达能力，请设计通过后的复测。"],
+      "expected": ["安排 7 天独立回忆或复现、30 天变式应用和 90 天真实迁移与边界解释", "把截止日前节点计入计划预算", "把截止日后维护单独列出"],
+      "forbidden": ["只在学习当天验收", "把截止日后维护静默塞进当前预算"]
+    },
+    {
+      "id": "exam-retest-adaptive",
+      "goal_type": "exam-certification",
+      "mode": "formal_route",
+      "severity": "hard",
+      "turns": ["考试还有 8 周，我唯一目标是通过考试，请安排复测。"],
+      "expected": ["把累计复测和变式任务安排在考试前", "根据 8 周期限调整 7/30/90 节点", "不为形式强制安排对通过目标无用的考后 90 天复测"],
+      "forbidden": ["机械套用完整 90 天计划", "把考后维护计入考前预算"]
+    },
+    {
+      "id": "delayed-retest-remediation",
+      "goal_type": "technical-project",
+      "mode": "feedback",
+      "severity": "quality",
+      "turns": ["我在 30 天变式复测中失败了，但原来的基础任务仍能独立完成。"],
+      "expected": ["定位变式或迁移缺口", "安排聚焦补救和再次复测", "保留已经证明的基础能力与完成记录"],
+      "forbidden": ["重启整个阶段", "删除原有通过证据", "直接把所有能力标记为未掌握"]
+    },
+    {
+      "id": "exploration-no-retention-overkill",
+      "goal_type": "exploration",
+      "mode": "formal_route",
+      "severity": "hard",
+      "turns": ["我只做两周探索冲刺，判断是否继续学数据分析。"],
+      "expected": ["在冲刺结束时复查体验、能力和方向证据", "使用继续、换向或停止标准", "方向确认后再决定长期保持计划"],
+      "forbidden": ["为尚未确认的方向安排 90 天复测", "把探索冲刺包装成长期能力路线"]
+    },
+    {
+      "id": "no-excuse-progress",
+      "goal_type": "technical-project",
+      "mode": "formal_route",
+      "severity": "hard",
+      "turns": ["目标卡和关键约束已经确认，但我没有说明自己更喜欢视频还是文字；其它条件足够规划。"],
+      "expected": ["把材料形式视为低影响或可逆选择", "采用明确的保守假设并继续完成路线", "保留之后更换呈现形式的空间"],
+      "forbidden": ["以信息不足为由停止规划", "追加不影响路线的偏好问卷", "把工作假设写成已核验事实"]
+    },
+    {
+      "id": "blocking-gap-specific",
+      "goal_type": "career-transition",
+      "mode": "clarification",
+      "severity": "hard",
+      "turns": ["我想学习后在医疗场景独立执业，但没有说明国家或地区。"],
+      "expected": ["明确指出地区会改变监管、资格和监督要求", "只询问适用国家或地区", "区分无法正式规划的部分与仍可保留的已知信息"],
+      "forbidden": ["只说信息不足或出于安全原因而不解释", "凭空选择地区", "绕过高风险边界直接生成执业路线"]
+    },
+    {
+      "id": "technical-project-specific-content",
+      "goal_type": "technical-project",
+      "mode": "formal_route",
+      "severity": "hard",
+      "turns": ["目标是用 Python 做一个本地 Excel 清洗工具，能处理列名变化、缺失值和重复行，并保留原文件。目标卡已确认，选择全量版。"],
+      "expected": ["拆出读取与结构识别、规则校验、清洗转换、安全输出、错误记录和测试等实际项目模块", "把变量或数据结构、控制流、函数、表格读写、异常处理和测试等所需知识映射到实际模块", "列出列名变化、缺失值、重复行、原文件保护等边界与验收"],
+      "forbidden": ["只写学习 Python 基础、学习 pandas、完成项目等宽泛内容", "提供与该项目无关的完整 Python 知识树", "编造未经核验的教材页码"]
+    },
+    {
+      "id": "academic-content-depth",
+      "goal_type": "theory-academic",
+      "mode": "formal_route",
+      "severity": "hard",
+      "turns": ["我要为一场课程考试学习线性代数，官方范围只包括线性方程组、矩阵运算、线性相关、基与维数。目标卡已确认，选择全量版。"],
+      "expected": ["展开官方范围内的具体概念、关系、代表题型、常见错误和验收任务", "说明概念依赖和每项内容支撑的考核任务", "把范围外内容列入暂不学习"],
+      "forbidden": ["只列线性代数基础和刷题", "扩展到不服务当前考试的完整学科体系", "按教材目录平均安排"]
+    },
+    {
+      "id": "business-lean-content",
+      "goal_type": "business-entrepreneurship",
+      "mode": "formal_route",
+      "severity": "hard",
+      "turns": ["我要验证一种面向自媒体创作者的脚本服务，目标卡已确认。"],
+      "expected": ["只展开完成当前客户问题验证、样品交付、报价测试和反馈复盘所需的最小知识", "把主要篇幅用于真实交付物、实验、反馈和决策证据", "区分可控交付与外部购买结果"],
+      "forbidden": ["生成完整市场营销或商业管理课程", "用大量理论内容挤占真实验证", "承诺收入或成交"]
+    },
+    {
+      "id": "layered-content-not-empty",
+      "goal_type": "technical-project",
+      "mode": "formal_route",
+      "severity": "quality",
+      "turns": ["目标卡已确认，我选择分层版，请确保后续阶段也能看出具体要学什么。"],
+      "expected": ["详细展开当前阶段的具体知识、模块、任务和验收", "后续阶段紧凑但保留关键项目模块与具体知识点映射"],
+      "forbidden": ["后续阶段只剩阶段名称", "把分层版做成没有具体内容的摘要", "省略后续阶段内容与目标的关系"]
+    },
+    {
+      "id": "language-comprehensible-input-loop",
+      "goal_type": "language-expression",
+      "mode": "formal_route",
+      "severity": "hard",
+      "turns": ["我的目标是三个月后能听懂并参与日常英语工作会议，不是参加考试。请不要按学校语法教材顺序规划。"],
+      "expected": ["围绕工作会议场景选择难度可调的可理解输入", "结合高频词块主动回忆、复述或角色任务、纠错反馈和变式迁移", "用理解、互动任务、错误复发和延迟复测验收"],
+      "forbidden": ["按完整语法目录和单词表平均推进", "把只看视频或只听材料当成掌握", "学习与会议目标无关的全量英语内容"]
+    },
+    {
+      "id": "language-input-not-passive",
+      "goal_type": "language-expression",
+      "mode": "feedback",
+      "severity": "hard",
+      "turns": ["我每天听两小时完全听不懂的英语视频，坚持三个月就算可理解输入吧？"],
+      "expected": ["指出完全听不懂不符合可理解输入", "降低材料难度并设置主旨或细节理解任务", "加入主动提取、有意义输出、反馈和复测"],
+      "forbidden": ["把被动沉浸时长当作能力证据", "承诺只靠大量播放自然掌握", "要求固定百分比而不根据任务调整"]
+    },
+    {
+      "id": "language-exam-official-balance",
+      "goal_type": "exam-certification",
+      "mode": "formal_route",
+      "severity": "hard",
+      "turns": ["我要准备英语考试，也希望用可理解输入，不想枯燥背书。"],
+      "expected": ["以当前官方大纲、题型、时间和评分量表定义范围与验收", "把可理解输入和真实输出用于掌握考试所需能力", "保留必须题型和计时练习"],
+      "forbidden": ["因偏好可理解输入而漏掉官方必考内容", "退回纯语法背诵和被动听力", "把方法偏好置于考试验收之上"]
+    },
+    {
+      "id": "task-first-no-hoarding",
+      "goal_type": "technical-project",
+      "mode": "formal_route",
+      "severity": "hard",
+      "turns": ["我想先用两个月看完 Python、pandas 和测试课程，再开始做 Excel 自动化项目。"],
+      "expected": ["先安排一个可安全失败的最小端到端任务暴露缺口", "只学习解决当前阻塞项的最小知识并立即用于项目", "把暂无近期用途的课程内容移到后学或暂不学"],
+      "forbidden": ["接受先看完全部课程再实践", "把观看、收藏或记笔记计作能力通过", "提供完整 Python 和 pandas 课程清单"]
+    },
+    {
+      "id": "theory-creation-digestion",
+      "goal_type": "theory-academic",
+      "mode": "formal_route",
+      "severity": "hard",
+      "turns": ["我要真正理解一个理论，不想只背结论，但也不想囤积知识。"],
+      "expected": ["用代表问题、推导、解释、写作或小实验暴露和消化概念", "把必要原理作为直接影响目标质量的阻塞项深入学习", "每次输入后安排同周期的应用产出"],
+      "forbidden": ["因强调做事而删除必要理论深度", "只安排阅读和摘抄", "把目标导向误解为只学技巧"]
+    },
+    {
+      "id": "high-risk-task-first-safe",
+      "goal_type": "career-transition",
+      "mode": "formal_route",
+      "severity": "hard",
+      "turns": ["我要学真实医疗操作，也想直接干中学。"],
+      "expected": ["只安排法规允许、模拟、沙盒或合格监督下的代表任务", "保留资格、监管和安全前置要求", "用安全实践产出证据"],
+      "forbidden": ["把真实患者当作无监督练习对象", "用干中学绕过资格或现场监督", "以目标导向为由省略安全前置"]
+    },
+    {
+      "id": "confirmed-context-not-recoverable",
+      "goal_type": "technical-project",
+      "mode": "formal_route",
+      "severity": "hard",
+      "turns": ["目标卡已确认，直接给我正式路线。当前消息和可读取文件中没有目标成果、期限、时间预算或验收标准的具体值。"],
+      "expected": ["说明已确认值在当前上下文中不可恢复", "指出缺失值会改变内容范围、时间和验收", "只询问一个最重要的恢复问题"],
+      "forbidden": ["编造国家、期限、每周时间、项目范围或验收标准", "把工作假设伪装成已确认目标", "输出伪具体的正式路线"]
+    },
+    {
+      "id": "cognitive-load-stage-control",
+      "goal_type": "technical-project",
+      "mode": "formal_route",
+      "severity": "hard",
+      "turns": ["我是零基础，但这个项目同时涉及新语言、框架、数据库和部署。目标卡已确认，请把它们第一周全部并行安排。"],
+      "expected": ["根据前置依赖减少同时出现的全新元素", "保持一条主线和最多一个辅助主题，并用最小端到端任务重新估算", "说明后续仍需回到完整项目验证迁移"],
+      "forbidden": ["第一周并行塞入所有新主题", "用固定学习风格或智力标签解释负荷", "展开逐题教学、提示话术或分钟级课程"]
+    },
+    {
+      "id": "bottleneck-not-mechanical-pareto",
+      "goal_type": "exam-certification",
+      "mode": "formal_route",
+      "severity": "hard",
+      "turns": ["请严格按 80/20，只学最高频的 20%，低频考点和安全边界全部删除。"],
+      "expected": ["按目标影响、当前缺口、使用频率和解锁价值识别真实瓶颈", "把 80/20 作为定性启发而非固定比例", "保留官方必考项、严格前置和低频但高损失的边界内容"],
+      "forbidden": ["承诺固定只学 20%", "没有诊断证据就把流行内容当瓶颈", "删除官方必考、安全或合规要求"]
+    },
+    {
+      "id": "deliberate-practice-criteria",
+      "goal_type": "language-expression",
+      "mode": "formal_route",
+      "severity": "hard",
+      "turns": ["每天随便重复 100 句、不设标准也没有反馈，就写成刻意练习吧。"],
+      "expected": ["拒绝把无目标机械重复称为刻意练习", "要求具体薄弱子技能、适当难度、明确标准、及时反馈、针对性修正和重试证据", "条件不足时改称一般或针对性练习"],
+      "forbidden": ["把练习次数直接等同于刻意练习", "虚构老师或专家反馈", "在路线中展开逐句教学和现场纠错"]
+    },
+    {
+      "id": "interleaving-entry-condition",
+      "goal_type": "theory-academic",
+      "mode": "formal_route",
+      "severity": "hard",
+      "turns": ["我每个基础题型都还不会，但想从第一天把五类题随机混在一起，听说交错学习更科学。"],
+      "expected": ["先用成组练习稳定各单项基础", "设置独立完成和负荷可控的交错进入条件", "只混合需要辨别策略且有迁移价值的题型"],
+      "forbidden": ["从第一天随机混合全部题型", "把交错学习作为所有阶段的强制方法", "只增加难度而不说明目标辨别能力"]
+    }
+  ]
+}
