@@ -17,6 +17,7 @@ JUDGE_SCHEMA = ROOT / "evals" / "judge-schema.json"
 FORWARD_RUNNER = ROOT / "scripts" / "run_forward_evals.py"
 INSTALLER = ROOT / "scripts" / "install_cross_agent.py"
 README = ROOT / "README.md"
+README_EN = ROOT / "README.en.md"
 AGENTS_ROUTER = ROOT / "AGENTS.md"
 CLAUDE_ROUTER = ROOT / "CLAUDE.md"
 GEMINI_ROUTER = ROOT / "GEMINI.md"
@@ -129,6 +130,7 @@ def main() -> int:
         FORWARD_RUNNER,
         INSTALLER,
         README,
+        README_EN,
         AGENTS_ROUTER,
         CLAUDE_ROUTER,
         GEMINI_ROUTER,
@@ -148,6 +150,7 @@ def main() -> int:
     progress = PROGRESS_PROTOCOL.read_text(encoding="utf-8")
     installable_text = "\n".join((skill, openai_yaml, planning, progress))
     readme = README.read_text(encoding="utf-8")
+    readme_en = README_EN.read_text(encoding="utf-8")
     installer = INSTALLER.read_text(encoding="utf-8")
     routers = {
         "AGENTS.md": AGENTS_ROUTER.read_text(encoding="utf-8"),
@@ -165,12 +168,31 @@ def main() -> int:
     if len(skill.splitlines()) >= 500:
         fail("SKILL.md must remain under 500 lines.", failures)
 
-    if "Current local version: `v1.0.0`" not in readme:
-        fail("README version is not v1.0.0.", failures)
+    if "当前版本：`v1.0.0`" not in readme:
+        fail("Chinese README version is not v1.0.0.", failures)
+    if "Current version: `v1.0.0`" not in readme_en:
+        fail("English README version is not v1.0.0.", failures)
     if "从原点出发，无限逼近真知。" not in skill or "从原点出发，无限逼近真知。" not in readme:
         fail("Zede-Zero tagline is missing from SKILL.md or README.md.", failures)
+    if "[English](README.en.md)" not in readme:
+        fail("Chinese README lacks the English language switch.", failures)
+    if "[简体中文](README.md)" not in readme_en:
+        fail("English README lacks the Chinese language switch.", failures)
     require_markers(
         readme,
+        (
+            "## 跨 Agent 兼容",
+            "原生 Skill",
+            "项目路由",
+            "通用提示词",
+            "scripts/install_cross_agent.py --target all-native --apply",
+            "docs/cross-agent-compatibility.md",
+        ),
+        "README.md",
+        failures,
+    )
+    require_markers(
+        readme_en,
         (
             "## Cross-agent compatibility",
             "Native Skill",
@@ -179,7 +201,7 @@ def main() -> int:
             "scripts/install_cross_agent.py --target all-native --apply",
             "docs/cross-agent-compatibility.md",
         ),
-        "README.md",
+        "README.en.md",
         failures,
     )
 
@@ -383,7 +405,9 @@ def main() -> int:
 
     if "$plan-learning-roadmap" in installable_text:
         fail("Found the obsolete invocation command.", failures)
-    public_text = "\n".join((skill, openai_yaml, readme, compatibility, installer, *routers.values()))
+    public_text = "\n".join(
+        (skill, openai_yaml, readme, readme_en, compatibility, installer, *routers.values())
+    )
     obsolete_public_names = (
         "zede-" + "plan-learning-roadmap",
         "Zede Plan " + "Learning Roadmap",
