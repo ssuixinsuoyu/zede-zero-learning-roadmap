@@ -37,6 +37,7 @@ GOAL_TYPES = {
     "exploration",
 }
 REQUIRED_HEADINGS = {
+    "## 保持前文连续性",
     "## 首次使用时说明全部规则",
     "## 展示并确认目标卡",
     "## 选择正式输出模式",
@@ -79,6 +80,7 @@ REQUIRED_CASES = {
     "resume-future-schema",
     "save-consent-every-write",
     "ordinary-feedback",
+    "context-continuity-feedback",
     "checkpoint-effectiveness",
     "explicit-persistent-upgrade",
     "tutoring-boundary",
@@ -257,6 +259,9 @@ def main() -> int:
     require_markers(
         skill,
         (
+            "当前唯一目标、成功证据和验收标准",
+            "只替换该局部",
+            "先分析这些一手证据",
             "references/planning-patterns.md",
             "references/progress-protocol.md",
             "第一性原理拆解",

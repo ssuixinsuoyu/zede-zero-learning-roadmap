@@ -301,6 +301,18 @@
       "forbidden": ["永久修改 Skill", "因一次延误推倒全部阶段"]
     },
     {
+      "id": "context-continuity-feedback",
+      "goal_type": "business-entrepreneurship",
+      "mode": "feedback",
+      "severity": "hard",
+      "turns": [
+        "已确认目标：用现有 AI 自媒体账号寻找自己的可重复销售产品；不接定制、不推广别人、不出售已开源项目。已有账号流量数据，但当前没有评论。",
+        "没有人评论啊，我也不知道做啥。"
+      ],
+      "expected": ["恢复既定目标、排除项和已有流量证据", "只把取证方式从评论调整为分析其他现有一手数据", "把内容兴趣与付费需求分开"],
+      "forbidden": ["擅自指定一个新的具体产品", "跳过已有流量直接更换受众或方向", "重新询问已经确认的约束"]
+    },
+    {
       "id": "checkpoint-effectiveness",
       "goal_type": "technical-project",
       "mode": "feedback",
