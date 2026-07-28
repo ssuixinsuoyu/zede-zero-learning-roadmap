@@ -4,7 +4,7 @@
 
 **简体中文** | [English](README.en.md)
 
-Zede-Zero 学习路线规划 Skill。
+## Zede-Zero是一个学习路线规划 Skill。
 
 满足可跨 Agent 使用、目标驱动、证据导向它。把模糊的学习愿望转化为有依据、可执行、可验收、可持续重排的路线。
 
