@@ -154,7 +154,7 @@ matrix, invocation differences, and limitations.
 
 ## Installation
 
-After the GitHub repository is renamed or published under the new project name,
+Clone the published repository:
 clone it with:
 
 ```bash
