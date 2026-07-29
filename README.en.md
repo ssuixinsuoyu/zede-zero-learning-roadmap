@@ -278,12 +278,3 @@ Issues and pull requests are welcome. Keep proposed rules general, reusable, and
 
 [MIT](LICENSE)
 
-## Star History
-
-<a href="https://www.star-history.com/?repos=ssuixinsuoyu%2Fzede-zero-learning-roadmap&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=ssuixinsuoyu/zede-zero-learning-roadmap&type=date&theme=dark&legend=top-left&sealed_token=Up9f70vg36C_w6HMBaiE_Fv9mCfrz3VXbWSadp89tTi7yUYttyLGyuRimPp5ELrlWU2SJuZLU-8ozjbPGPPPp0iZaRnAzLnA0B2fT6P0w-NlCbY-SUzGJCTKX6cpFTQT3yq7U5yGHJNLg1zcgEhI6eevo9RAw2pvwhEwmjl3cbm6TaZOEQ2xoIIs3NdF" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=ssuixinsuoyu/zede-zero-learning-roadmap&type=date&legend=top-left&sealed_token=Up9f70vg36C_w6HMBaiE_Fv9mCfrz3VXbWSadp89tTi7yUYttyLGyuRimPp5ELrlWU2SJuZLU-8ozjbPGPPPp0iZaRnAzLnA0B2fT6P0w-NlCbY-SUzGJCTKX6cpFTQT3yq7U5yGHJNLg1zcgEhI6eevo9RAw2pvwhEwmjl3cbm6TaZOEQ2xoIIs3NdF" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=ssuixinsuoyu/zede-zero-learning-roadmap&type=date&legend=top-left&sealed_token=Up9f70vg36C_w6HMBaiE_Fv9mCfrz3VXbWSadp89tTi7yUYttyLGyuRimPp5ELrlWU2SJuZLU-8ozjbPGPPPp0iZaRnAzLnA0B2fT6P0w-NlCbY-SUzGJCTKX6cpFTQT3yq7U5yGHJNLg1zcgEhI6eevo9RAw2pvwhEwmjl3cbm6TaZOEQ2xoIIs3NdF" />
- </picture>
-</a>
