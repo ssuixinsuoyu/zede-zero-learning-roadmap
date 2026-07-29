@@ -367,10 +367,4 @@ $zede-zero-learning-roadmap 根据这份 schema v1 路线恢复进度，不要�
 
 ## Star History
 
-<a href="https://www.star-history.com/?repos=zede-zero-learning-roadmap%2Fzede-zero-learning-roadmap&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=zede-zero-learning-roadmap/zede-zero-learning-roadmap&type=date&theme=dark&legend=top-left&sealed_token=vp5-et0UFZtzcREWBKkRUvuHJE3fmkuN2vEA9wtB-htd91pr_Zw7SzrnOScFMLj-ifMvizYKSkpUXmIp-p_ZnPitQvDKcYSyWkP__iYBbI9HTD6KXZsghvzITBLU8uZdPaMMFDZxE3PDQZP3dVGke9tohbOKJvi5iJZNCm633UP8xn2CnrNcc55dhEaz" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=zede-zero-learning-roadmap/zede-zero-learning-roadmap&type=date&legend=top-left&sealed_token=vp5-et0UFZtzcREWBKkRUvuHJE3fmkuN2vEA9wtB-htd91pr_Zw7SzrnOScFMLj-ifMvizYKSkpUXmIp-p_ZnPitQvDKcYSyWkP__iYBbI9HTD6KXZsghvzITBLU8uZdPaMMFDZxE3PDQZP3dVGke9tohbOKJvi5iJZNCm633UP8xn2CnrNcc55dhEaz" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=zede-zero-learning-roadmap/zede-zero-learning-roadmap&type=date&legend=top-left&sealed_token=vp5-et0UFZtzcREWBKkRUvuHJE3fmkuN2vEA9wtB-htd91pr_Zw7SzrnOScFMLj-ifMvizYKSkpUXmIp-p_ZnPitQvDKcYSyWkP__iYBbI9HTD6KXZsghvzITBLU8uZdPaMMFDZxE3PDQZP3dVGke9tohbOKJvi5iJZNCm633UP8xn2CnrNcc55dhEaz" />
- </picture>
-</a>
+[![Star History Chart](https://api.star-history.com/chart?repos=zede-zero-learning-roadmap/zede-zero-learning-roadmap&type=date&legend=top-left&sealed_token=vp5-et0UFZtzcREWBKkRUvuHJE3fmkuN2vEA9wtB-htd91pr_Zw7SzrnOScFMLj-ifMvizYKSkpUXmIp-p_ZnPitQvDKcYSyWkP__iYBbI9HTD6KXZsghvzITBLU8uZdPaMMFDZxE3PDQZP3dVGke9tohbOKJvi5iJZNCm633UP8xn2CnrNcc55dhEaz)](https://www.star-history.com/?repos=zede-zero-learning-roadmap%2Fzede-zero-learning-roadmap&type=date&legend=top-left)
